@@ -1,6 +1,7 @@
 package com.example.demo.db;
 
 import java.io.Reader;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -23,9 +24,16 @@ public class DBManager {
 		}
 	}
 	
-	public static List<BoardVO> findAll(){
+	public static int getTotalRecord(HashMap map) {
 		SqlSession session = factory.openSession();
-		List<BoardVO> list = session.selectList("board.findAll");
+		int no = session.selectOne("board.totalRecord",map);
+		session.close();
+		return no;
+	}
+	
+	public static List<BoardVO> findAll(HashMap map){
+		SqlSession session = factory.openSession();
+		List<BoardVO> list = session.selectList("board.findAll",map);
 		session.close();
 		return list;
 	}
@@ -59,4 +67,20 @@ public class DBManager {
 		session.close();
 		return re;
 	}
+
+	public static int delete(HashMap map) {
+		SqlSession session = factory.openSession();
+		int re = session.delete("board.delete",map);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	public static void updateHit(int no) {
+		SqlSession session = factory.openSession();
+		session.update("board.updateHit",no);
+		session.commit();
+		session.close();
+	}
+
 }

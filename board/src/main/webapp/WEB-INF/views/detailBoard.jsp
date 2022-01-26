@@ -16,8 +16,10 @@
 	<textarea rows="10" cols="50" readonly="readonly">${b.content }</textarea><br>
 	등록일:${b.regdate } <br>
 	조회수:${b.hit } <br>
+	ip:${b.ip }<br>
 	첨부파일명:${b.fname } <br>
 	<a href="listBoard">목록</a>
 	<a href="updateBoard?no=${b.no }">수정</a>
+	<a href="deleteBoard?no=${b.no }">삭제</a>
 </body>
 </html>

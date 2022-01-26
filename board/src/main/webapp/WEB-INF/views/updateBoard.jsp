@@ -12,10 +12,11 @@
 	<form action="updateBoard" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="no" value="${b.no }">
 		제목:<input type="text" name="title" value="${b.title }"><br>
+		암호:<input type="password" name="pwd"><br>
 		내용:<br>
 		<textarea rows="10" cols="50" name="content">${b.content }</textarea><br>
 		첨부파일: <input type="file" name="uploadFile"><br>
-		<input type="hidden" name="fname"><br>
+		<input type="hidden" name="fname" value="${b.fname }"><br>(${b.fname })
 		<hr>
 		<input type="submit" value="수정">
 		<input type="reset" value="취소">

@@ -15,5 +15,7 @@ public class BoardVO {
 	private Date regdate;
 	private int hit;
 	private String fname;
+	private String pwd;
+	private String ip;
 	private MultipartFile uploadFile;
 }
