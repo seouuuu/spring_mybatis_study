@@ -10,7 +10,16 @@
 </head>
 <body>
 	<h2>게시판 목록</h2>
-	<hr>
+	
+	<c:if test="${not empty member }">
+		${member.name }님 로그인 하였습니다.
+		<a href="listBoard?writer=${member.id }">나의 글</a>
+		<a href="listBoard?writer=all">모든 글</a><br>
+	</c:if>
+	<c:if test="${empty member }">
+		<a href="login">로그인</a><br>
+	</c:if>
+	
 	<a href="insertBoard">게시물 등록</a>
 	<br>
 	<form action="listBoard" method="post">
