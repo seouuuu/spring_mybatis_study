@@ -9,8 +9,8 @@ import kr.co.youiwe.webservice.ServiceSMSSoapProxy;
 public class BitSms {
 	public void sendMsg(String from, String to, String msg) {
 		
-		String smsID= "rola";			
-		String smsPW="bit123400";
+		String smsID= "";			
+		String smsPW="";
 		
 		ServiceSMSSoapProxy sendsms = new ServiceSMSSoapProxy();
 		try{		
