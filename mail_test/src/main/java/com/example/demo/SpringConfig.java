@@ -15,8 +15,8 @@ public class SpringConfig {
 		JavaMailSenderImpl r = new JavaMailSenderImpl();
 		r.setHost("smtp.gmail.com");
 		r.setPort(587);
-		r.setUsername("seou101010");
-		r.setPassword("iykkcejrnlnamkwh");
+		r.setUsername("");
+		r.setPassword("");
 		r.setDefaultEncoding("UTF-8");
 		
 		Properties prop = new Properties();
