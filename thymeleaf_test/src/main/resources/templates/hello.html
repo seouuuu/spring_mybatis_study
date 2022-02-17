@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Thymeleaf Test</h2>
+	<hr>
+	이름: <span th:text="${name}"></span>
+	<hr>
+	<h2>과일 목록</h2>
+	<ul>
+		<li th:each="f : ${list}">
+			<span th:text="${f}"></span>
+		</li>
+	</ul>
+	<hr>
+	<h2>회원 목록</h2>
+	<table border="1" width="80%">
+		<tr>
+			<th>회원번호</th>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+		</tr>
+		<tr th:each="m : ${memberList}">
+			<td th:text="${m.no}"></td>
+			<td th:text="${m.name}"></td>
+			<td th:text="${m.age}"></td>
+			<td th:text="${m.addr}"></td>
+		</tr>
+	</table>
+</body>
+</html>
